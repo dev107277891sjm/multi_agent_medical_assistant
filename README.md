@@ -17,7 +17,7 @@ The **Multi-Agent Medical Assistant** is an advanced AI-powered system designed 
 ---
 
 ## 📌 Project Workflow  
-![Project Workflow](artifacts/medical_chatbot_flowchart.png.png)
+![Project Workflow](artifacts/medical_chatbot_flowchart.png)
 
 
 ---
