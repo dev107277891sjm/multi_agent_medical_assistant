@@ -88,5 +88,7 @@ This project is licensed under the **Apache-2.0 License**. See the [LICENSE](LIC
 
 ## 📬 Contact  
 For any questions or collaboration inquiries, reach out to **Souvik Majumder** on:  
+
 🔗 **LinkedIn**: [https://www.linkedin.com/in/souvikmajumder26](https://www.linkedin.com/in/souvikmajumder26)
+
 🔗 **GitHub**: [https://github.com/souvikmajumder26](https://github.com/souvikmajumder26)  
