@@ -2,9 +2,6 @@
  
 ![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo_rounded.png)
 
-<!-- ![logo](https://images.weserv.nl/?url=https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg?raw=True&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d
-) -->
-
 <h1 align="center"><strong>⚕️ Multi-Agent-Medical-Assistant:<h6 align="center">AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
 
 <!-- ![PyTorch - Version](https://img.shields.io/badge/PYTORCH-2.0+-red?style=for-the-badge&logo=pytorch) -->
