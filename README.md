@@ -36,7 +36,9 @@
 ---- -->
 
 ## 📌 Overview <a name="overview"></a>
-The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system designed to assist in medical diagnosis, research, and patient interactions. Using a **multi-agent framework**, this assistant integrates **LLMs, computer vision models, retrieval-based techniques, and web search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
+The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system designed to assist in medical diagnosis, research, and patient interactions.
+
+Using a **Multi-Agent framework**, this assistant integrates **Large Language Models, Computer Vision Models, Retrieval Augmented Generated leveraging Vector Database, and Web Search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
 
 ---
 
@@ -47,7 +49,7 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 ---
 
 ## 🛡️ Technical Workflow  <a name="technical-workflow"></a>
-![Technical Workflow](assets/medical_chatbot_flowchart_rounded.png)
+![Technical Workflow](assets/final_medical_assistant_flowchart_light_rounded.png)
 
 ---
 
