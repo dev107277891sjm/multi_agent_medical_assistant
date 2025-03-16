@@ -23,7 +23,7 @@
 <!-- ## 📚 Table of Contents
 - [Overview](#overview)
 - [Demo](#demo)
-- [Technical Workflow](#️technical-workflow)
+- [Technical Flow Chart](#️technical-flowchart)
 - [Key Features](#key-features)
 - [Tech Stack](#️tech-stack)
 - [Installation and Setup](#installation-setup)
@@ -38,7 +38,7 @@
 ## 📌 Overview <a name="overview"></a>
 The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system designed to assist in medical diagnosis, research, and patient interactions.
 
-Using a **Multi-Agent framework**, this assistant integrates **Large Language Models, Computer Vision Models, Retrieval Augmented Generated leveraging Vector Database, and Web Search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
+Using a **Multi-Agentic framework**, this assistant integrates **Large Language Models, Computer Vision Models, Retrieval Augmented Generation leveraging Vector Database, and Web Search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
 
 ---
 
@@ -48,12 +48,12 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
 ---
 
-## 🛡️ Technical Workflow  <a name="technical-workflow"></a>
-![Technical Workflow](assets/final_medical_assistant_flowchart_light_rounded.png)
+## 🛡️ Technical Flow Chart  <a name="technical-flowchart"></a>
+![Technical Flow Chart](assets/final_medical_assistant_flowchart_light_rounded.png)
 
 ---
 
-## 🌟 Key Features  <a name="key-features"></a>
+<!-- ## 🌟 Key Features  <a name="key-features"></a>
 ✅ **Multi-Agent System** – Separate agents handle different tasks (diagnosis, retrieval, reasoning, etc.).  
 ✅ **RAG-based Retrieval** – Uses Qdrant for vector search & hybrid retrieval techniques.  
 ✅ **Medical Image Analysis** – Supports **brain tumor segmentation, chest X-ray disease detection, and skin lesion classification**.  
@@ -72,7 +72,47 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 🔹 **Medical Image Analysis**: Computer vision models (Brain Tumor - Semantic Segmentation, Chest X-ray - Object Detection, Skin Lesion - Classification) 🏥  
 🔹 **Speech Processing**: Eleven Labs API 🎙️  
 🔹 **UI**: HTML, CSS, JS, Flask 🌐  
-🔹 **Deployment**: Docker 🛠️  
+🔹 **Deployment**: Docker 🛠️   -->
+
+## ✨ Key Features  <a name="key-features"></a>
+
+- 🤖 **Multi-Agent Architecture**  
+  Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
+
+- 🔍 **Advanced RAG Retrieval System**  
+  Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques
+
+- 🏥 **Medical Imaging Analysis**  
+  - Brain Tumor Segmentation
+  - Chest X-ray Disease Detection
+  - Skin Lesion Classification
+
+- 🌐 **Real-time Research Integration**  
+  Web search agent that retrieves the latest medical research papers and findings
+
+- 📊 **Confidence-Based Verification**  
+  Log probability analysis ensures high accuracy in medical recommendations
+
+- 🎙️ **Voice Interaction Capabilities**  
+  Seamless speech-to-text and text-to-speech powered by Eleven Labs API
+
+- 👩‍⚕️ **Expert Oversight System**  
+  Human-in-the-loop verification by medical professionals before finalizing outputs
+
+- 💻 **Intuitive User Interface**  
+  Designed for healthcare professionals with minimal technical expertise
+
+## 🛠️ Technology Stack  <a name="tech-stack"></a>
+
+| Component | Technologies |
+|-----------|-------------|
+| **Backend Framework** | FastAPI |
+| **Agent Orchestration** | LangGraph + LangChain |
+| **Knowledge Storage** | Qdrant Vector Database |
+| **Medical Imaging** | Computer Vision Models (Segmentation, Detection, Classification) |
+| **Voice Processing** | Eleven Labs API |
+| **Frontend** | HTML, CSS, JavaScript, Flask |
+| **Deployment** | Docker, CI/CD Pipeline |
 
 ---
 
@@ -149,7 +189,7 @@ python app.py
 
 ## 🧠 Usage  <a name="usage"></a>
 - Upload medical images for **AI-based diagnosis**.  
-- Ask medical queries using **retrieval-augmented generation (RAG)**.  
+- Ask medical queries to leverage **retrieval-augmented generation (RAG)** if information in memory or **web-search** to retrieve latest information.  
 - Use **voice-based** interaction (speech-to-text and text-to-speech).  
 - Review AI-generated insights with **human-in-the-loop verification**.  
 
