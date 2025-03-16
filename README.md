@@ -2,14 +2,14 @@
  
 ![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo_rounded.png)
 
-<h1 align="center"><strong>⚕️ Multi-Agent-Medical-Assistant:<h6 align="center">AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
+<h1 align="center"><strong>⚕️ Multi-Agent-Medical-Assistant :<h6 align="center">AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
 
 <!-- ![PyTorch - Version](https://img.shields.io/badge/PYTORCH-2.0+-red?style=for-the-badge&logo=pytorch) -->
 ![Python - Version](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
 ![LangGraph - Version](https://img.shields.io/badge/LangGraph-0.3+-teal?style=for-the-badge&logo=langgraph)
 ![LangChain - Version](https://img.shields.io/badge/LangChain-0.3+-teal?style=for-the-badge&logo=langchain)
 ![Pydantic - Version](https://img.shields.io/badge/Pydantic-2.10+-red?style=for-the-badge&logo=pydantic)
-![Qdrant Client - Version](https://img.shields.io/badge/Qdrant%20Client-1.13+-teal?style=for-the-badge&logo=qdrant)
+![Qdrant Client - Version](https://img.shields.io/badge/Qdrant-1.13+-teal?style=for-the-badge&logo=qdrant)
 ![FastAPI - Version](https://img.shields.io/badge/FastAPI-0.115+-teal?style=for-the-badge&logo=fastapi)
 ![Flask - Version](https://img.shields.io/badge/Flask-3.1+-blue?style=for-the-badge&logo=flask)
 [![Generic badge](https://img.shields.io/badge/License-Apache-<COLOR>.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/LICENSE) 
@@ -22,9 +22,10 @@
  
 ## 📚 Table of Contents
 - [Overview](#overview)
-- [Key Features](#key-features)
 - [Demo](#demo)
 - [Technical Workflow](#technical-workflow)
+- [Key Features](#key-features)
+- [Tech Stack](#️tech-stack)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setting up and Running the project with Docker](#with-docker)
@@ -41,6 +42,17 @@ The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system d
 
 ---
 
+## 💫 Demo <a name="demo"></a>
+
+https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
+
+---
+
+## 📌 Technical Workflow  <a name="technical-workflow"></a>
+![Technical Workflow](assets/medical_chatbot_flowchart_rounded.png)
+
+---
+
 ## 🌟 Key Features  <a name="key-features"></a>
 ✅ **Multi-Agent System** – Separate agents handle different tasks (diagnosis, retrieval, reasoning, etc.).  
 ✅ **RAG-based Retrieval** – Uses Qdrant for vector search & hybrid retrieval techniques.  
@@ -53,22 +65,11 @@ The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system d
 
 ---
 
-## 💫 Demo <a name="demo"></a>
-
-https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/Medical_Assistant_Demo.mp4
-
----
-
-## 📌 Technical Workflow  <a name="technical-workflow"></a>
-![Technical Workflow](assets/medical_chatbot_flowchart_rounded.png)
-
----
-
-## 🛠️ Tech Stack  
+## 🛠️ Tech Stack  <a name="tech-stack"></a>
 🔹 **Backend**: FastAPI 🚀  
 🔹 **Multi-Agent Orchestration**: LangGraph + LangChain 🤖  
 🔹 **Vector Database**: Qdrant (for retrieval-augmented generation) 🔍  
-🔹 **Medical Image Analysis**: Computer vision models (Brain Tumor Segmentation, Chest X-ray Disease Detection, Skin Lesion Classification.) 🏥  
+🔹 **Medical Image Analysis**: Computer vision models (Brain Tumor - Semantic Segmentation, Chest X-ray - Object Detection, Skin Lesion - Classification) 🏥  
 🔹 **Speech Processing**: Eleven Labs API 🎙️  
 🔹 **UI**: HTML, CSS, JS, Flask 🌐  
 🔹 **Deployment**: Docker 🛠️  
