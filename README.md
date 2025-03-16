@@ -1,5 +1,15 @@
-# 🏥 Multi-Agent Medical Assistant  
-🚀 **An AI-powered multi-agent system for medical diagnosis and assistance**  
+<div align="center">
+ 
+![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg)  
+
+<h1 align="center"><strong>🏥 Multi-Agent Medical Assistant:<h6 align="center">An AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
+
+</div>
+
+----
+
+<!-- # 🏥 Multi-Agent Medical Assistant  
+🚀 **An AI-powered multi-agent system for medical diagnosis and assistance**   -->
 
 ## 📌 Overview  
 The **Multi-Agent Medical Assistant** is an advanced AI-powered system designed to assist in medical diagnosis, research, and patient interactions. Using a **multi-agent framework**, this assistant integrates **LLMs, computer vision models, retrieval-based techniques, and web search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
@@ -17,7 +27,7 @@ The **Multi-Agent Medical Assistant** is an advanced AI-powered system designed 
 ---
 
 ## 📌 Project Workflow  
-![Project Workflow](artifacts/medical_chatbot_flowchart.png)
+![Project Workflow](assets/medical_chatbot_flowchart.png)
 
 
 ---
