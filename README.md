@@ -9,8 +9,8 @@
 ![LangGraph - Version](https://img.shields.io/badge/LangGraph-0.3+-teal?style=for-the-badge&logo=langgraph)
 ![LangChain - Version](https://img.shields.io/badge/LangChain-0.3+-teal?style=for-the-badge&logo=langchain)
 ![Pydantic - Version](https://img.shields.io/badge/Pydantic-2.10+-red?style=for-the-badge&logo=pydantic)
-![Qdrant Client - Version](https://img.shields.io/badge/Qdrant-1.13+-teal?style=for-the-badge&logo=qdrant)
 ![FastAPI - Version](https://img.shields.io/badge/FastAPI-0.115+-teal?style=for-the-badge&logo=fastapi)
+![Qdrant Client - Version](https://img.shields.io/badge/Qdrant-1.13+-red?style=for-the-badge&logo=qdrant)
 ![Flask - Version](https://img.shields.io/badge/Flask-3.1+-blue?style=for-the-badge&logo=flask)
 [![Generic badge](https://img.shields.io/badge/License-Apache-<COLOR>.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/LICENSE) 
 [![GitHub Issues](https://img.shields.io/github/issues/souvikmajumder26/Multi-Agent-Medical-Assistant.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/issues)
@@ -23,17 +23,15 @@
 ## 📚 Table of Contents
 - [Overview](#overview)
 - [Demo](#demo)
-- [Technical Workflow](#technical-workflow)
+- [Technical Workflow](#️technical-workflow)
 - [Key Features](#key-features)
 - [Tech Stack](#️tech-stack)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setting up and Running the project with Docker](#with-docker)
-  - [Setup without Docker](#setup)
-  - [Running the project without Docker](#running-the-project)
-- [Citing](#citing)
+- [Installation and Setup](#installation-setup)
+- [Usage](#usage)
+- [Contributions](#contributions)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
+- [Citing](#citing)
+- [Contact](#contact)
 
 ----
 
@@ -48,7 +46,7 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
 ---
 
-## 📌 Technical Workflow  <a name="technical-workflow"></a>
+## 🛡️ Technical Workflow  <a name="technical-workflow"></a>
 ![Technical Workflow](assets/medical_chatbot_flowchart_rounded.png)
 
 ---
@@ -76,7 +74,7 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
 ---
 
-## 🚀 Installation & Setup  
+## 🚀 Installation & Setup  <a name="installation-setup"></a>
 
 ### 1️⃣ Clone the Repository  
 ```bash  
@@ -85,10 +83,16 @@ cd Multi-Agent-Medical-Assistant
 ```
 
 ### 2️⃣ Create & Activate Virtual Environment  
-```bash  
-python -m venv venv  
-source venv/bin/activate  # For Mac/Linux  
-venv\Scripts\activate     # For Windows  
+- If using conda:
+```bash
+conda create --name <environment-name> python=3.11
+conda activate <environment-name>
+```
+- If using python venv:
+```bash
+python -m venv <environment-name>
+source <environment-name>/bin/activate  # For Mac/Linux
+<environment-name>\Scripts\activate     # For Windows  
 ```
 
 ### 3️⃣ Install Dependencies  
@@ -97,10 +101,40 @@ pip install -r requirements.txt
 ```
 
 ### 4️⃣ Set Up API Keys  
-- Create a `.env` file and add API keys (Azure OpenAI, Eleven Labs, etc.).  
+- Create a `.env` file and add the following API keys:
+```bash
+# LLM Configuration (Azure Open AI - gpt-4o)...
+# If using any other LLM API key or local LLM, appropriate code modification is required
+deployment_name = 
+model_name = gpt-4o
+azure_endpoint = 
+openai_api_key = 
+openai_api_version = 
+
+# Embedding Model Configuration (Azure Open AI - text-embedding-ada-002)
+# If using any other embedding model, appropriate code modification is required
+embedding_deployment_name =
+embedding_model_name = text-embedding-ada-002
+embedding_azure_endpoint = 
+embedding_openai_api_key = 
+embedding_openai_api_version = 
+
+# Speech API Key (Free credits available with new Eleven Labs Account)
+ELEVEN_LABS_API_KEY = 
+
+# Web Search API Key (Free credits available with new Eleven Labs Account)
+TAVILY_API_KEY = 
+
+# (OPTIONAL) Hugging Face Token
+HUGGINGFACE_TOKEN = 
+
+# (OPTIONAL) If using Qdrant server version, local does not require API key
+QDRANT_URL = 
+QDRANT_API_KEY = 
+```
 
 ### 5️⃣ Run the Application  
-- Run the following commands in separate windows simultaneously.
+- Run the following commands one after another in separate windows with same directorty and virtual environment. Keep both running simultanesouly.
 ```bash  
 uvicorn api/fastapi_backend:app --reload
 ```
@@ -111,7 +145,7 @@ python app.py
 
 ---
 
-## 📌 Usage  
+## 🧠 Usage  <a name="usage"></a>
 - Upload medical images for **AI-based diagnosis**.  
 - Ask medical queries using **retrieval-augmented generation (RAG)**.  
 - Use **voice-based** interaction (speech-to-text and text-to-speech).  
@@ -119,19 +153,39 @@ python app.py
 
 ---
 
-## 🤝 Contributing  
+## 🤝 Contributions  <a name="contributions"></a>
 Contributions are welcome! Please check the [issues](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/issues) tab for feature requests and improvements.  
 
 ---
 
-## ⚖️ License  
+## ⚖️ License  <a name="license"></a>
 This project is licensed under the **Apache-2.0 License**. See the [LICENSE](LICENSE) file for details.  
 
 ---
 
-## 📬 Contact  
+## 📝 Citing <a name="citing"></a>
+```
+@misc{Souvik2025,
+  Author = {Souvik Majumder},
+  Title = {Multi Agent Medical Assistant},
+  Year = {2025},
+  Publisher = {GitHub},
+  Journal = {GitHub repository},
+  Howpublished = {\url{https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant}}
+}
+```
+
+---
+
+## 📬 Contact  <a name="contact"></a>
 For any questions or collaboration inquiries, reach out to **Souvik Majumder** on:  
 
 🔗 **LinkedIn**: [https://www.linkedin.com/in/souvikmajumder26](https://www.linkedin.com/in/souvikmajumder26)
 
 🔗 **GitHub**: [https://github.com/souvikmajumder26](https://github.com/souvikmajumder26)  
+
+<p align="right">
+ <a href="#top"><b>🔝 Return </b></a>
+</p>
+
+---
