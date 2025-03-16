@@ -1,8 +1,17 @@
 <div align="center">
  
-![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg)  
+<!-- ![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg)   -->
 
-<h1 align="center"><strong>🏥 Multi-Agent Medical Assistant:<h6 align="center">An AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
+![logo](https://images.weserv.nl/?url=https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg?v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d
+)
+
+<h1 align="center"><strong>⚕️ Multi-Agent Medical Assistant:<h6 align="center">An AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
+
+![PyTorch - Version](https://img.shields.io/badge/PYTORCH-2.0+-red?style=for-the-badge&logo=pytorch)
+![Python - Version](https://img.shields.io/badge/PYTHON-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
+[![Generic badge](https://img.shields.io/badge/License-Apache-<COLOR>.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch/blob/main/LICENSE) 
+[![GitHub Issues](https://img.shields.io/github/issues/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch/issues)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg?style=for-the-badge)
 
 </div>
 
