@@ -1,9 +1,11 @@
 <div align="center">
  
-<!-- ![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg)   -->
+![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg)  
 
-![logo](https://images.weserv.nl/?url=https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg?raw=True&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d
-)
+![logo](<kbd> <img src="https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg" /> </kbd>)
+
+<!-- ![logo](https://images.weserv.nl/?url=https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg?raw=True&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d
+) -->
 
 <h1 align="center"><strong>⚕️ Multi-Agent Medical Assistant:<h6 align="center">An AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
 
