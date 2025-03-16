@@ -1,8 +1,6 @@
 <div align="center">
  
-![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo.jpg)  
-
-![logo](<kbd> <img src="https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg" /> </kbd>)
+![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo_image.jpg)
 
 <!-- ![logo](https://images.weserv.nl/?url=https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg?raw=True&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d
 ) -->
