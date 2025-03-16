@@ -2,28 +2,46 @@
  
 ![logo](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/logo_rounded.png)
 
-<!-- ![logo](https://images.weserv.nl/?url=https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/dev/assets/logo.jpg?raw=True&v=4&h=300&w=300&fit=cover&mask=circle&maxage=7d
-) -->
+<h1 align="center"><strong>⚕️ Multi-Agent-Medical-Assistant:<h6 align="center">AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
 
-<h1 align="center"><strong>⚕️ Multi-Agent Medical Assistant:<h6 align="center">An AI-powered multi-agentic system for medical diagnosis and assistance</h6></strong></h1>
-
-![PyTorch - Version](https://img.shields.io/badge/PYTORCH-2.0+-red?style=for-the-badge&logo=pytorch)
-![Python - Version](https://img.shields.io/badge/PYTHON-3.9+-blue?style=for-the-badge&logo=python&logoColor=white)
-[![Generic badge](https://img.shields.io/badge/License-Apache-<COLOR>.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch/blob/main/LICENSE) 
-[![GitHub Issues](https://img.shields.io/github/issues/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Land-Cover-Semantic-Segmentation-PyTorch/issues)
+<!-- ![PyTorch - Version](https://img.shields.io/badge/PYTORCH-2.0+-red?style=for-the-badge&logo=pytorch) -->
+![Python - Version](https://img.shields.io/badge/PYTHON-3.11+-blue?style=for-the-badge&logo=python&logoColor=white)
+![LangGraph - Version](https://img.shields.io/badge/LangGraph-0.3+-teal?style=for-the-badge&logo=langgraph)
+![LangChain - Version](https://img.shields.io/badge/LangChain-0.3+-teal?style=for-the-badge&logo=langchain)
+![Pydantic - Version](https://img.shields.io/badge/Pydantic-2.10+-red?style=for-the-badge&logo=pydantic)
+![Qdrant Client - Version](https://img.shields.io/badge/Qdrant%20Client-1.13+-teal?style=for-the-badge&logo=qdrant)
+![FastAPI - Version](https://img.shields.io/badge/FastAPI-0.115+-teal?style=for-the-badge&logo=fastapi)
+![Flask - Version](https://img.shields.io/badge/Flask-3.1+-blue?style=for-the-badge&logo=flask)
+[![Generic badge](https://img.shields.io/badge/License-Apache-<COLOR>.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/LICENSE) 
+[![GitHub Issues](https://img.shields.io/github/issues/souvikmajumder26/Multi-Agent-Medical-Assistant.svg?style=for-the-badge)](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/issues)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg?style=for-the-badge)
 
 </div>
 
 ----
+ 
+## 📚 Table of Contents
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Demo](#demo)
+- [Technical Workflow](#technical-workflow)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setting up and Running the project with Docker](#with-docker)
+  - [Setup without Docker](#setup)
+  - [Running the project without Docker](#running-the-project)
+- [Citing](#citing)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
 
-<!-- # 🏥 Multi-Agent Medical Assistant  
-🚀 **An AI-powered multi-agent system for medical diagnosis and assistance**   -->
+----
 
-## 📌 Overview  
-The **Multi-Agent Medical Assistant** is an advanced AI-powered system designed to assist in medical diagnosis, research, and patient interactions. Using a **multi-agent framework**, this assistant integrates **LLMs, computer vision models, retrieval-based techniques, and web search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
+## 📌 Overview <a name="overview"></a>
+The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system designed to assist in medical diagnosis, research, and patient interactions. Using a **multi-agent framework**, this assistant integrates **LLMs, computer vision models, retrieval-based techniques, and web search** to provide **accurate**, **reliable**, and **up-to-date** medical insights.
 
-## 🌟 Key Features  
+---
+
+## 🌟 Key Features  <a name="key-features"></a>
 ✅ **Multi-Agent System** – Separate agents handle different tasks (diagnosis, retrieval, reasoning, etc.).  
 ✅ **RAG-based Retrieval** – Uses Qdrant for vector search & hybrid retrieval techniques.  
 ✅ **Medical Image Analysis** – Supports **brain tumor segmentation, chest X-ray disease detection, and skin lesion classification**.  
@@ -35,9 +53,14 @@ The **Multi-Agent Medical Assistant** is an advanced AI-powered system designed 
 
 ---
 
-## 📌 Project Workflow  
-![Project Workflow](assets/medical_chatbot_flowchart_rounded.png)
+## 💫 Demo <a name="demo"></a>
 
+https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/blob/main/assets/Medical_Assistant_Demo.mp4
+
+---
+
+## 📌 Technical Workflow  <a name="technical-workflow"></a>
+![Technical Workflow](assets/medical_chatbot_flowchart_rounded.png)
 
 ---
 
