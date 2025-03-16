@@ -102,35 +102,20 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 - 💻 **Intuitive User Interface**  
   Designed for healthcare professionals with minimal technical expertise
 
-<!-- ## 🛠️ Technology Stack  <a name="tech-stack"></a>
+## 🛠️ Technology Stack  <a name="tech-stack"></a>
 
 | Component | Technologies |
 |-----------|-------------|
-| **Backend Framework** | FastAPI |
+| **Backend Framework** | FastAPI, Flask |
 | **Agent Orchestration** | LangGraph + LangChain |
 | **Knowledge Storage** | Qdrant Vector Database |
-| **Medical Imaging** | Computer Vision Models (Segmentation, Detection, Classification) |
+| **Medical Imaging** | Computer Vision Models |
+| | • Brain Tumor: Semantic Segmentation |
+| | • Chest X-ray: Object Detection |
+| | • Skin Lesion: Classification |
 | **Voice Processing** | Eleven Labs API |
-| **Frontend** | HTML, CSS, JavaScript, Flask |
-| **Deployment** | Docker, CI/CD Pipeline | -->
-
-## 🛠️ Technology Stack  <a name="tech-stack"></a>
-
-| Layer | Components | Technologies |
-|-------|------------|--------------|
-| **Backend** | API Framework | FastAPI, Flask |
-| **AI Orchestration** | Agent Management | LangGraph, LangChain |
-| **Data Storage** | Vector Database | Qdrant |
-| | Knowledge Base | RAG (Retrieval-Augmented Generation) |
-| **Medical Analysis** | Image Processing | Computer Vision Models |
-| | | • Brain Tumor: Semantic Segmentation |
-| | | • Chest X-ray: Object Detection |
-| | | • Skin Lesion: Classification |
-| **User Interface** | Frontend | HTML, CSS, JavaScript |
-| | Experience | Responsive Design |
-| **Voice Integration** | Speech Processing | Eleven Labs API |
-| **Deployment** | Containerization | Docker |
-| | DevOps | CI/CD Pipeline |
+| **Frontend** | HTML, CSS, JavaScript |
+| **Deployment** | Docker, CI/CD Pipeline |
 
 ---
 
