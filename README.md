@@ -105,7 +105,7 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 | **Medical Imaging** | Computer Vision Models |
 | | • Brain Tumor: Semantic Segmentation |
 | | • Chest X-ray: Object Detection |
-| | • Skin Lesion: Classification |
+| | • Skin Lesion: Image Classification |
 | **Voice Processing** | Eleven Labs API |
 | **Frontend** | HTML, CSS, JavaScript |
 | **Deployment** | Docker, CI/CD Pipeline |
