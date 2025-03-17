@@ -78,7 +78,7 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
 - 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
-- 🔍 **Advanced RAG Retrieval System** : Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques
+- 🔍 **Advanced RAG Retrieval System** : Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques, supported file types: .txt, .csv, .json, .pdf
 
 - 🏥 **Medical Imaging Analysis**  
   - Brain Tumor Segmentation
@@ -179,6 +179,16 @@ uvicorn api/fastapi_backend:app --reload
 
 ```bash
 python app.py
+```
+
+### 6️⃣ Ingest additional data into the Vector DB
+- Run any one of the following commands as required. First one to ingest one document at a time, second one to ingest multiple documents from a directory.
+```bash
+python ingest_rag_data.py --file ./data/raw/brain_tumors_ucni.pdf
+```
+
+```bash
+python ingest_rag_data.py --dir ./data/raw
 ```
 
 ---

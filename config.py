@@ -25,6 +25,16 @@ class ModelConfig:
 class RAGConfig:
     def __init__(self):
         self.vector_db_type = "qdrant"
+        self.embedding_dim = 1536  # Add the embedding dimension here
+        self.distance_metric = "Cosine"  # Add this with a default value
+        self.use_local = True  # Add this with a default value
+        self.local_path = "./data/qdrant_db2"  # Add this with a default value
+        self.url = os.getenv("QDRANT_URL")
+        self.api_key = os.getenv("QDRANT_API_KEY")
+        self.collection_name = "medical_assistance_rag"  # Ensure a valid name
+        self.chunk_size = 512  # Set a default value
+        self.chunk_overlap = 50  # If you use overlap, set it too
+        self.processed_docs_dir = "./data/processed"  # Set a default value
         # self.vector_db_path = "data/vector_db"
         self.collection_name = "medical_knowledge"
         # self.embedding_model = "text-embedding-3-large"
@@ -47,16 +57,6 @@ class RAGConfig:
         self.top_k = 5
         self.similarity_threshold = 0.75
         self.huggingface_token = os.getenv("HUGGINGFACE_TOKEN")
-        self.embedding_dim = 1536  # Add the embedding dimension here
-        self.distance_metric = "Cosine"  # Add this with a default value
-        self.use_local = True  # Add this with a default value
-        self.local_path = "./data/qdrant_db2"  # Add this with a default value
-        self.url = os.getenv("QDRANT_URL")
-        self.api_key = os.getenv("QDRANT_API_KEY")
-        self.collection_name = "medical_assistance_rag"  # Ensure a valid name
-        self.chunk_size = 512  # Set a default value
-        self.chunk_overlap = 50  # If you use overlap, set it too
-        self.processed_docs_dir = "./data/processed"  # Set a default value
 
         self.reranker_model = "cross-encoder/ms-marco-TinyBERT-L-6"
         self.reranker_top_k = 5
@@ -71,7 +71,7 @@ class RAGConfig:
         self.include_sources = True  # ADD THIS LINE
         self.metrics_save_path = "./logs/rag_metrics.json"  # ADD THIS LINE
 
-        self.min_retrieval_confidence = 0.4
+        self.min_retrieval_confidence = 0.5 # the auto routing from RAG agent to WEB_SEARCH agent is dependent on this value
 
 class MedicalCVConfig:
     def __init__(self):
@@ -136,7 +136,7 @@ class Config:
         self.ui = UIConfig()
         self.eleven_labs_api_key = os.getenv("ELEVEN_LABS_API_KEY")
         self.tavily_api_key = os.getenv("TAVILY_API_KEY")
-        self.max_conversation_history = 10
+        self.max_conversation_history = 20
 
 # # Example usage
 # config = Config()
