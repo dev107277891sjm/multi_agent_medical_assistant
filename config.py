@@ -25,7 +25,7 @@ class ModelConfig:
 class RAGConfig:
     def __init__(self):
         self.vector_db_type = "qdrant"
-        self.vector_db_path = "data/vector_db"
+        # self.vector_db_path = "data/vector_db"
         self.collection_name = "medical_knowledge"
         # self.embedding_model = "text-embedding-3-large"
         # Initialize Azure OpenAI Embeddings
@@ -50,7 +50,7 @@ class RAGConfig:
         self.embedding_dim = 1536  # Add the embedding dimension here
         self.distance_metric = "Cosine"  # Add this with a default value
         self.use_local = True  # Add this with a default value
-        self.local_path = "./data/qdrant_db"  # Add this with a default value
+        self.local_path = "./data/qdrant_db2"  # Add this with a default value
         self.url = os.getenv("QDRANT_URL")
         self.api_key = os.getenv("QDRANT_API_KEY")
         self.collection_name = "medical_assistance_rag"  # Ensure a valid name
@@ -61,8 +61,13 @@ class RAGConfig:
         self.reranker_model = "cross-encoder/ms-marco-TinyBERT-L-6"
         self.reranker_top_k = 5
 
-        self.max_context_length = 1024  # ADD THIS LINE (Change based on your need)
-        self.response_format_instructions = "Provide a well-structured response based on retrieved knowledge."  # ADD THIS LINE
+        self.max_context_length = 8192  # ADD THIS LINE (Change based on your need) # 1024 proved to be too low and caused issue (retrieved content length > context length = no context added) in formatting context in response_generator code
+        self.response_format_instructions = """Instructions:
+        1. Answer the query based ONLY on the information provided in the context.
+        2. If the context doesn't contain relevant information to answer the query, state: "I don't have enough information to answer this question based on the provided context."
+        3. Do not use prior knowledge not contained in the context.
+        5. Be concise and accurate.
+        6. Provide a well-structured response based on retrieved knowledge."""  # ADD THIS LINE
         self.include_sources = True  # ADD THIS LINE
         self.metrics_save_path = "./logs/rag_metrics.json"  # ADD THIS LINE
 

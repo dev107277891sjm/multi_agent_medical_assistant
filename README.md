@@ -163,7 +163,7 @@ ELEVEN_LABS_API_KEY =
 # Web Search API Key (Free credits available with new Eleven Labs Account)
 TAVILY_API_KEY = 
 
-# (OPTIONAL) Hugging Face Token
+# Hugging Face Token - using reranker model "ms-marco-TinyBERT-L-6"
 HUGGINGFACE_TOKEN = 
 
 # (OPTIONAL) If using Qdrant server version, local does not require API key
