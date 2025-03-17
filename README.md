@@ -76,31 +76,24 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
 ## ✨ Key Features  <a name="key-features"></a>
 
-- 🤖 **Multi-Agent Architecture**  
-  Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
+- 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
-- 🔍 **Advanced RAG Retrieval System**  
-  Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques
+- 🔍 **Advanced RAG Retrieval System** : Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques
 
 - 🏥 **Medical Imaging Analysis**  
   - Brain Tumor Segmentation
   - Chest X-ray Disease Detection
   - Skin Lesion Classification
 
-- 🌐 **Real-time Research Integration**  
-  Web search agent that retrieves the latest medical research papers and findings
+- 🌐 **Real-time Research Integration** : Web search agent that retrieves the latest medical research papers and findings
 
-- 📊 **Confidence-Based Verification**  
-  Log probability analysis ensures high accuracy in medical recommendations
+- 📊 **Confidence-Based Verification** : Log probability analysis ensures high accuracy in medical recommendations
 
-- 🎙️ **Voice Interaction Capabilities**  
-  Seamless speech-to-text and text-to-speech powered by Eleven Labs API
+- 🎙️ **Voice Interaction Capabilities** : Seamless speech-to-text and text-to-speech powered by Eleven Labs API
 
-- 👩‍⚕️ **Expert Oversight System**  
-  Human-in-the-loop verification by medical professionals before finalizing outputs
+- 👩‍⚕️ **Expert Oversight System** : Human-in-the-loop verification by medical professionals before finalizing outputs
 
-- 💻 **Intuitive User Interface**  
-  Designed for healthcare professionals with minimal technical expertise
+- 💻 **Intuitive User Interface** : Designed for healthcare professionals with minimal technical expertise
 
 ## 🛠️ Technology Stack  <a name="tech-stack"></a>
 
