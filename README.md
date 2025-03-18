@@ -174,7 +174,7 @@ QDRANT_API_KEY =
 ### 5️⃣ Run the Application  
 - Run the following commands one after another in separate windows with same directorty and virtual environment. Keep both running simultanesouly.
 ```bash  
-uvicorn api/fastapi_backend:app --reload
+uvicorn api.fastapi_backend:app --reload
 ```
 
 ```bash
