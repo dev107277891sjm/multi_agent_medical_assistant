@@ -77,7 +77,8 @@ class MedicalCVConfig:
     def __init__(self):
         self.brain_tumor_model_path = "./agents/image_analysis_agent/brain_tumor_agent/models/brain_tumor_segmentation.pth"
         self.chest_xray_model_path = "./agents/image_analysis_agent/chest_xray_agent/models/covid_chest_xray_model.pth"
-        self.skin_lesion_model_path = "./agents/image_analysis_agent/skin_lesion_agent/models/skin_lesion_classification.pth"
+        self.skin_lesion_model_path = "./agents/image_analysis_agent/skin_lesion_agent/models/checkpointN25_.pth.tar"
+        self.skin_lesion_segmentation_output_path = "./uploads/skin_lesion_output/segmentation_plot.png"
         # self.brain_image_size = (240, 240, 155)
         # self.chest_xray_image_size = (512, 512)
         # self.skin_lesion_image_size = (224, 224)

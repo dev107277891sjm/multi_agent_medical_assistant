@@ -1,3 +1,4 @@
+import logging
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -8,11 +9,16 @@ from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
 
-class ChestXRayAgent:
-    def __init__(self, model_path='./covid_chest_xray_model.pth', device=None):
+class ChestXRayClassification:
+    def __init__(self, model_path, device=None):
+        # Configure logging
+        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        self.logger = logging.getLogger(__name__)
+
         self.class_names = ['covid19', 'normal']
         self.device = device if device else torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        print(f"Using device: {self.device}")
+        # print(f"Using device: {self.device}")
+        self.logger.info(f"Using device: {self.device}")
         
         # Load model
         self.model = self._build_model(weights=None)
@@ -40,9 +46,11 @@ class ChestXRayAgent:
         """Load pre-trained model weights."""
         try:
             self.model.load_state_dict(torch.load(model_path, map_location=self.device))
-            print(f"Model loaded successfully from {model_path}")
+            # print(f"Model loaded successfully from {model_path}")
+            self.logger.info(f"Model loaded successfully from {model_path}")
         except Exception as e:
-            print(f"Error loading model: {e}")
+            # print(f"Error loading model: {e}")
+            self.logger.error(f"Error loading model: {e}")
     
     def predict(self, img_path):
         """Predict the class of a given image."""
@@ -61,10 +69,12 @@ class ChestXRayAgent:
             # plt.imshow(np.array(image))
             # plt.title(f"Predicted: {pred_class}")
             # plt.show()
+
+            self.logger.info(f"Predicted Class: {pred_class}")
             
             return pred_class
         except Exception as e:
-            print(f"Error in prediction: {e}")
+            self.logger.error(f"Error during prediction Covid Chest X-ray: {str(e)}")
             return None
 
 # if __name__ == "__main__":
