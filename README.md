@@ -20,7 +20,7 @@
 
 ----
  
-<!-- ## 📚 Table of Contents
+## 📚 Table of Contents
 - [Overview](#overview)
 - [Demo](#demo)
 - [Technical Flow Chart](#️technical-flowchart)
@@ -33,7 +33,7 @@
 - [Citing](#citing)
 - [Contact](#contact)
 
----- -->
+----
 
 ## 📌 Overview <a name="overview"></a>
 The **Multi-Agent Medical Assistant** is an advanced AI-powered chatbot system designed to assist in medical diagnosis, research, and patient interactions.
