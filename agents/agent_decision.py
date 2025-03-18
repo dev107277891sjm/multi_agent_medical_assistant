@@ -376,11 +376,11 @@ def create_agent_graph():
         predicted_class = AgentConfig.image_analyzer.classify_chest_xray(image_path)
 
         if predicted_class == "covid19":
-            response = AIMessage(content="The analysis of the uploaded chest X-ray image indicates a *POSITIVE* result for *COVID-19*.")
+            response = AIMessage(content="The analysis of the uploaded chest X-ray image indicates a **POSITIVE** result for **COVID-19**.")
         elif predicted_class == "normal":
-            response = AIMessage(content="The analysis of the uploaded chest X-ray image indicates a *NEGATIVE* result for *COVID-19*, i.e., *NORMAL*.")
+            response = AIMessage(content="The analysis of the uploaded chest X-ray image indicates a **NEGATIVE** result for **COVID-19**, i.e., **NORMAL**.")
         else:
-            response = AIMessage(content="The uploaded chest X-ray image is not clear enough to make a diagnosis / the image is not a chest X-ray image.")
+            response = AIMessage(content="The uploaded image is not clear enough to make a diagnosis / the image is not a medical image.")
 
         # response = AIMessage(content="This would be handled by the chest X-ray agent, analyzing the image.")
 
@@ -394,9 +394,20 @@ def create_agent_graph():
     def run_skin_lesion_agent(state: AgentState) -> AgentState:
         """Handle skin lesion image analysis."""
 
+        current_input = state["current_input"]
+        image_path = current_input.get("image", None)
+
         print(f"Selected agent: SKIN_LESION_AGENT")
 
-        response = AIMessage(content="This would be handled by the skin lesion agent, analyzing the skin image.")
+        # classify chest x-ray into covid or normal
+        predicted_mask = AgentConfig.image_analyzer.segment_skin_lesion(image_path)
+
+        if predicted_mask:
+            response = AIMessage(content="Following is the analysis (**segmentation**) output of the uploaded skin lesion image.")
+        else:
+            response = AIMessage(content="The uploaded image is not clear enough to make a diagnosis / the image is not a medical image.")
+
+        # response = AIMessage(content="This would be handled by the skin lesion agent, analyzing the skin image.")
 
         return {
             **state,

@@ -194,7 +194,7 @@ python ingest_rag_data.py --dir ./data/raw
 ---
 
 ## 🧠 Usage  <a name="usage"></a>
-- Upload medical images for **AI-based diagnosis**.  
+- Upload medical images for **AI-based diagnosis**. Task specific Computer Vision model powered agents - upload images from 'sample_images' folder to try out.
 - Ask medical queries to leverage **retrieval-augmented generation (RAG)** if information in memory or **web-search** to retrieve latest information.  
 - Use **voice-based** interaction (speech-to-text and text-to-speech).  
 - Review AI-generated insights with **human-in-the-loop verification**.  
