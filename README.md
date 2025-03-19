@@ -23,9 +23,9 @@
 ## 📚 Table of Contents
 - [Overview](#overview)
 - [Demo](#demo)
-- [Technical Flow Chart](#️technical-flowchart)
+- [Technical Flow Chart](#technical-flowchart)
 - [Key Features](#key-features)
-- [Tech Stack](#️tech-stack)
+- [Tech Stack](#️technology-stack)
 - [Installation and Setup](#installation-setup)
 - [Usage](#usage)
 - [Contributions](#contributions)
@@ -46,9 +46,12 @@ Using a **Multi-Agentic framework**, this assistant integrates **Large Language 
 
 https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
+If you like what you see and would want to support the project's developer, you can <a href="https://www.buymeacoffee.com/souvikmajumder" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a> ! :)
+
 ---
 
 ## 🛡️ Technical Flow Chart  <a name="technical-flowchart"></a>
+
 ![Technical Flow Chart](assets/final_medical_assistant_flowchart_light_rounded.png)
 
 ---
@@ -95,20 +98,22 @@ https://github.com/user-attachments/assets/42df729c-7f74-4af1-a3df-e88226af8549
 
 - 💻 **Intuitive User Interface** : Designed for healthcare professionals with minimal technical expertise
 
-## 🛠️ Technology Stack  <a name="tech-stack"></a>
+---
+
+## 🛠️ Technology Stack  <a name="technology-stack"></a>
 
 | Component | Technologies |
 |-----------|-------------|
-| **Backend Framework** | FastAPI, Flask |
-| **Agent Orchestration** | LangGraph + LangChain |
-| **Knowledge Storage** | Qdrant Vector Database |
-| **Medical Imaging** | Computer Vision Models |
-| | • Brain Tumor: Semantic Segmentation |
-| | • Chest X-ray: Object Detection |
-| | • Skin Lesion: Image Classification |
-| **Voice Processing** | Eleven Labs API |
-| **Frontend** | HTML, CSS, JavaScript |
-| **Deployment** | Docker, CI/CD Pipeline |
+| 🔹 **Backend Framework** | FastAPI, Flask |
+| 🔹 **Agent Orchestration** | LangGraph + LangChain |
+| 🔹 **Knowledge Storage** | Qdrant Vector Database |
+| 🔹 **Medical Imaging** | Computer Vision Models |
+| | • Brain Tumor: Object Detection |
+| | • Chest X-ray: Image Classification |
+| | • Skin Lesion: Semantic Segmentation |
+| 🔹 **Speech Processing** | Eleven Labs API |
+| 🔹 **Frontend** | HTML, CSS, JavaScript |
+| 🔹 **Deployment** | Docker, CI/CD Pipeline |
 
 ---
 
@@ -240,7 +245,7 @@ For any questions or collaboration inquiries, reach out to **Souvik Majumder** o
 
 🔗 **LinkedIn**: [https://www.linkedin.com/in/souvikmajumder26](https://www.linkedin.com/in/souvikmajumder26)
 
-🔗 **GitHub**: [https://github.com/souvikmajumder26](https://github.com/souvikmajumder26)  
+🔗 **GitHub**: [https://github.com/souvikmajumder26](https://github.com/souvikmajumder26)
 
 <p align="right">
  <a href="#top"><b>🔝 Return </b></a>
