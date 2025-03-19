@@ -96,7 +96,7 @@ class APIConfig:
         self.port = 8000
         self.debug = True
         self.rate_limit = 10
-        self.max_image_upload_size = 10
+        self.max_image_upload_size = 1  # 1 MB max upload
 
 class SpeechConfig:
     def __init__(self):
