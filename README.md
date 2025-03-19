@@ -140,8 +140,18 @@ pip install -r requirements.txt
 
 ### 4️⃣ Set Up API Keys  
 - Create a `.env` file and add the following API keys:
+
+> [!NOTE]  
+> You may use any llm and embedding model of your choice...
+> 1. If using Azure OpenAI, no modification required.
+> 2. If using direct OpenAI, modify the llm and embedding model definitions in the 'config.py' na provide appropriate env variables.
+> 3. If using local models, appropriate code changes will be required throughout the codebase especially in 'agents'.
+
+> [!WARNING]  
+> If all necessary env variables are not provided, errors will be thrown in console.
+
 ```bash
-# LLM Configuration (Azure Open AI - gpt-4o)...
+# LLM Configuration (Azure Open AI - gpt-4o used in development)
 # If using any other LLM API key or local LLM, appropriate code modification is required
 deployment_name = 
 model_name = gpt-4o
@@ -149,7 +159,7 @@ azure_endpoint =
 openai_api_key = 
 openai_api_version = 
 
-# Embedding Model Configuration (Azure Open AI - text-embedding-ada-002)
+# Embedding Model Configuration (Azure Open AI - text-embedding-ada-002 used in development)
 # If using any other embedding model, appropriate code modification is required
 embedding_deployment_name =
 embedding_model_name = text-embedding-ada-002
@@ -160,7 +170,7 @@ embedding_openai_api_version =
 # Speech API Key (Free credits available with new Eleven Labs Account)
 ELEVEN_LABS_API_KEY = 
 
-# Web Search API Key (Free credits available with new Eleven Labs Account)
+# Web Search API Key (Free credits available with new Tavily Account)
 TAVILY_API_KEY = 
 
 # Hugging Face Token - using reranker model "ms-marco-TinyBERT-L-6"
