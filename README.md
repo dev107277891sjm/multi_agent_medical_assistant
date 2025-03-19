@@ -140,13 +140,16 @@ pip install -r requirements.txt
 
 ### 4️⃣ Set Up API Keys  
 - Create a `.env` file and add the following API keys:
+
 > [!NOTE]  
 > You may use any llm and embedding model of your choice...
-> 1. If using Azure OpenAI, code is made for that.
+> 1. If using Azure OpenAI, no modification required.
 > 2. If using direct OpenAI, modify the llm and embedding model definitions in the 'config.py' na provide appropriate env variables.
 > 3. If using local models, appropriate code changes will be required throughout the codebase especially in 'agents'.
+
 > [!WARNING]  
 > If all necessary env variables are not provided, errors will be thrown in console.
+
 ```bash
 # LLM Configuration (Azure Open AI - gpt-4o used in development)
 # If using any other LLM API key or local LLM, appropriate code modification is required
