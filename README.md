@@ -170,7 +170,7 @@ embedding_openai_api_version =
 # Speech API Key (Free credits available with new Eleven Labs Account)
 ELEVEN_LABS_API_KEY = 
 
-# Web Search API Key (Free credits available with new Eleven Labs Account)
+# Web Search API Key (Free credits available with new Tavily Account)
 TAVILY_API_KEY = 
 
 # Hugging Face Token - using reranker model "ms-marco-TinyBERT-L-6"
