@@ -326,6 +326,38 @@ def create_agent_graph():
             "retrieval_confidence": retrieval_confidence,
             "agent_name": "RAG_AGENT"
         }
+    
+    def _build_prompt_for_web_search(self, query: str, chat_history: List[Dict[str, str]] = None) -> str:
+        """
+        Build the prompt for the web search.
+        
+        Args:
+            query: User query
+            chat_history: chat history
+            
+        Returns:
+            Complete prompt string
+        """
+        # Add chat history if provided
+        history_text = ""
+        if chat_history and len(chat_history) > 0:
+            history_parts = []
+            for exchange in chat_history[-3:]:  # Include last 3 exchanges at most
+                if "user" in exchange and "assistant" in exchange:
+                    history_parts.append(f"User: {exchange['user']}\nAssistant: {exchange['assistant']}")
+            history_text = "\n\n".join(history_parts)
+            history_text = f"Chat History:\n{history_text}\n\n"
+            
+        # Build the prompt
+        prompt = f"""Here is the last three messages from our conversation:
+        {history_text}
+        The user asked the following question:
+        "{query}"
+        Summarize them into a single, well-formed question that can be used for a web search.
+        Keep it concise and ensure it captures the key intent behind the discussion.
+        """
+
+        return prompt
 
     # Web Search Processor Node
     def run_web_search_processor_agent(state: AgentState) -> AgentState:
@@ -334,8 +366,20 @@ def create_agent_graph():
         print(f"Selected agent: WEB_SEARCH_PROCESSOR_AGENT")
         print("[WEB_SEARCH_PROCESSOR_AGENT] Processing Web Search Results...")
 
+        chat_history = []   ##################### Debugging
+        for msg in state["messages"]:
+            if isinstance(msg, dict):
+                # If it's a dictionary, add it directly (assuming it has the right structure)
+                chat_history.append(msg)
+            else:
+                # Otherwise, assume it's a HumanMessage or similar object
+                role_type = "user" if isinstance(msg, HumanMessage) else "assistant"
+                chat_history.append({"role": role_type, "content": msg.content})
+
         web_search_processor = WebSearchProcessorAgent(config)
-        processed_response = web_search_processor.process_web_search_results(query=state["current_input"])
+        web_search_query_prompt = _build_prompt_for_web_search(state["current_input"], chat_history)
+        web_search_query = AgentConfig.llm.invoke(web_search_query_prompt)
+        processed_response = web_search_processor.process_web_search_results(query=web_search_query)
         
         if state['agent_name'] != None:
             involved_agents = f"{state['agent_name']}, WEB_SEARCH_PROCESSOR_AGENT"
