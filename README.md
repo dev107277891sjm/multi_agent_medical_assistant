@@ -139,7 +139,19 @@ source <environment-name>/bin/activate  # For Mac/Linux
 ```
 
 ### 3️⃣ Install Dependencies  
-```bash  
+
+> [!IMPORTANT]  
+> ffmpeg is required for speech service to work.
+
+- If using conda:
+```bash
+conda install -c conda-forge ffmpeg
+pip install ffmpeg-python
+pip install -r requirements.txt  
+```
+- If using python venv:
+```bash
+winget install ffmpeg
 pip install -r requirements.txt  
 ```
 
