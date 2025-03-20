@@ -146,7 +146,6 @@ source <environment-name>/bin/activate  # For Mac/Linux
 - If using conda:
 ```bash
 conda install -c conda-forge ffmpeg
-pip install ffmpeg-python
 pip install -r requirements.txt  
 ```
 - If using python venv:
