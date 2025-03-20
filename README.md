@@ -84,9 +84,9 @@ If you like what you see and would want to support the project's developer, you 
 - 🔍 **Advanced RAG Retrieval System** : Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques, supported file types: .txt, .csv, .json, .pdf
 
 - 🏥 **Medical Imaging Analysis**  
-  - Brain Tumor Segmentation
-  - Chest X-ray Disease Detection
-  - Skin Lesion Classification
+  - Brain Tumor Detection
+  - Chest X-ray Disease Classification
+  - Skin Lesion Segmentation
 
 - 🌐 **Real-time Research Integration** : Web search agent that retrieves the latest medical research papers and findings
 
@@ -95,6 +95,8 @@ If you like what you see and would want to support the project's developer, you 
 - 🎙️ **Voice Interaction Capabilities** : Seamless speech-to-text and text-to-speech powered by Eleven Labs API
 
 - 👩‍⚕️ **Expert Oversight System** : Human-in-the-loop verification by medical professionals before finalizing outputs
+
+- ⚔️ **Input & Output Guardrails** : Ensures safe, unbiased, and reliable medical responses while filtering out harmful or misleading content
 
 - 💻 **Intuitive User Interface** : Designed for healthcare professionals with minimal technical expertise
 
@@ -105,12 +107,13 @@ If you like what you see and would want to support the project's developer, you 
 | Component | Technologies |
 |-----------|-------------|
 | 🔹 **Backend Framework** | FastAPI, Flask |
-| 🔹 **Agent Orchestration** | LangGraph + LangChain |
+| 🔹 **Agent Orchestration** | LangGraph |
 | 🔹 **Knowledge Storage** | Qdrant Vector Database |
 | 🔹 **Medical Imaging** | Computer Vision Models |
 | | • Brain Tumor: Object Detection |
 | | • Chest X-ray: Image Classification |
 | | • Skin Lesion: Semantic Segmentation |
+| 🔹 **Guardrails** | LangChain |
 | 🔹 **Speech Processing** | Eleven Labs API |
 | 🔹 **Frontend** | HTML, CSS, JavaScript |
 | 🔹 **Deployment** | Docker, CI/CD Pipeline |
