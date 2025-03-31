@@ -105,7 +105,15 @@ If you like what you see and would want to support the project's developer, you 
 
 - 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
-- 🔍 **Advanced RAG Retrieval System** : Leveraging Qdrant for precise vector search and sophisticated hybrid retrieval techniques, supported file types: .txt, .csv, .json, .pdf
+- 🔍 **Advanced RAG Retrieval System** : 
+  - Unstructured.io parsing to extract and embed text along with tables from PDFs.
+  - Semantic chunking with structural boundary awareness.
+  - Qdrant hybrid search combining BM25 sparse keyword search along with dense embedding vector search.
+  - Query expansion with related terms to enhance search results.
+  - Metadata enrichment to add context and improve seach accuracy.
+  - Input-output guardrails to ensure safe and relevant responses.
+  - Confidence-based agent-to-agent handoff between RAG and Web Search to prevent hallucinations.
+  - Supported file types for RAG ingestion and retrieval: .txt, .csv, .json, .pdf.
 
 - 🏥 **Medical Imaging Analysis**  
   - Brain Tumor Detection
@@ -134,9 +142,9 @@ If you like what you see and would want to support the project's developer, you 
 | 🔹 **Agent Orchestration** | LangGraph |
 | 🔹 **Knowledge Storage** | Qdrant Vector Database |
 | 🔹 **Medical Imaging** | Computer Vision Models |
-| | • Brain Tumor: Object Detection |
-| | • Chest X-ray: Image Classification |
-| | • Skin Lesion: Semantic Segmentation |
+| | • Brain Tumor: Object Detection (PyTorch) |
+| | • Chest X-ray: Image Classification (PyTorch) |
+| | • Skin Lesion: Semantic Segmentation (PyTorch) |
 | 🔹 **Guardrails** | LangChain |
 | 🔹 **Speech Processing** | Eleven Labs API |
 | 🔹 **Frontend** | HTML, CSS, JavaScript |
@@ -169,16 +177,58 @@ source <environment-name>/bin/activate  # For Mac/Linux
 
 > [!IMPORTANT]  
 > ffmpeg is required for speech service to work.
+> Poppler and Tesseract OCR are essential for table extraction from PDFs using Unstructured.IO.
+
+- To install poppler and tesseract OCR for Ubuntu/Debian/macOS:
+```bash
+# if on Ubuntu/Debian
+sudo apt-get update
+sudo apt-get install -y poppler-utils tesseract-ocr
+```
+```bash
+# if on macOS
+brew install poppler tesseract
+```
+
+- Install Poppler for Windows:
+```bash
+Download the latest poppler release for Windows from: https://github.com/oschwartz10612/poppler-windows/releases/
+Extract the ZIP file to a location on your computer (e.g., 'C:\Program Files\poppler')
+Add the bin directory to your PATH environment variable (e.g., 'C:\Program Files\poppler\bin')
+```
+
+- Install Tesseract OCR for Windows:
+```bash
+Download the Tesseract installer from: https://github.com/UB-Mannheim/tesseract/wiki
+Run the installer and complete the installation
+By default, it installs to 'C:\Program Files\Tesseract-OCR'
+Make sure to add it to your PATH during installation or add it manually afterward
+```
+
+- Verify your installation:
+```bash
+Open a new command prompt (to ensure it has the updated PATH)
+Run 'tesseract --version' to verify Tesseract is properly installed
+Run 'pdfinfo -h' or 'pdftoppm -h' to verify Poppler is properly installed
+```
 
 - If using conda:
 ```bash
 conda install -c conda-forge ffmpeg
+```
+```bash
 pip install -r requirements.txt  
 ```
 - If using python venv:
 ```bash
 winget install ffmpeg
+```
+```bash
 pip install -r requirements.txt  
+```
+- Might be required, might not be:
+```bash
+pip install unstructured[pdf]
 ```
 
 ### 4️⃣ Set Up API Keys  
@@ -187,8 +237,8 @@ pip install -r requirements.txt
 > [!NOTE]  
 > You may use any llm and embedding model of your choice...
 > 1. If using Azure OpenAI, no modification required.
-> 2. If using direct OpenAI, modify the llm and embedding model definitions in the 'config.py' na provide appropriate env variables.
-> 3. If using local models, appropriate code changes will be required throughout the codebase especially in 'agents'.
+> 2. If using direct OpenAI, modify the llm and embedding model definitions in the 'config.py' and provide appropriate env variables.
+> 3. If using local models, appropriate code changes might be required throughout the codebase especially in 'agents'.
 
 > [!WARNING]  
 > If all necessary env variables are not provided, errors will be thrown in console.
@@ -247,6 +297,12 @@ python ingest_rag_data.py --dir ./data/raw
 ---
 
 ## 🧠 Usage  <a name="usage"></a>
+
+> [!NOTE]
+> The first run can be jittery and may get errors - be patient and check the console for ongoing downloads and installations.
+> On the first run, many models will be downloaded - yolo for tesseract ocr, computer vision agent models, cross-encoder reranker model, etc.
+> Once they are completed, retry. Everything should work seamlessly since all of it is thoroughly tested.
+
 - Upload medical images for **AI-based diagnosis**. Task specific Computer Vision model powered agents - upload images from 'sample_images' folder to try out.
 - Ask medical queries to leverage **retrieval-augmented generation (RAG)** if information in memory or **web-search** to retrieve latest information.  
 - Use **voice-based** interaction (speech-to-text and text-to-speech).  
