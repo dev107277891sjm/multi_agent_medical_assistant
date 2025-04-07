@@ -103,11 +103,6 @@ If you like what you see and would want to support the project's developer, you 
 
 ## ✨ Key Features  <a name="key-features"></a>
 
-> [!NOTE]  
-> Upcoming features:
-> 1. Brain Tumor Medical Computer Vision model integration.
-> 2. Streaming of LLM responses to UI.
-
 - 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
 - 🔍 **Advanced RAG Retrieval System** : 
@@ -136,6 +131,11 @@ If you like what you see and would want to support the project's developer, you 
 - ⚔️ **Input & Output Guardrails** : Ensures safe, unbiased, and reliable medical responses while filtering out harmful or misleading content
 
 - 💻 **Intuitive User Interface** : Designed for healthcare professionals with minimal technical expertise
+
+> [!NOTE]  
+> Upcoming features:
+> 1. Brain Tumor Medical Computer Vision model integration.
+> 2. Streaming of LLM responses to UI.
 
 ---
 
