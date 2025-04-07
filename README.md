@@ -27,6 +27,8 @@
 - [Key Features](#key-features)
 - [Tech Stack](#technology-stack)
 - [Installation and Setup](#installation-setup)
+  - [Using Docker](#docker-setup)
+  - [Manual Installation](#manual-setup)
 - [Usage](#usage)
 - [Contributions](#contributions)
 - [License](#license)
@@ -161,6 +163,85 @@ If you like what you see and would want to support the project's developer, you 
 
 ## 🚀 Installation & Setup  <a name="installation-setup"></a>
 
+## 📌 Option 1: Using Docker  <a name="docker-setup"></a>
+
+### 1️⃣ Clone the Repository  
+```bash  
+git clone https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant.git  
+cd Multi-Agent-Medical-Assistant  
+```
+
+### 2️⃣ Set Up API Keys  
+- Create a `.env` file and add the following API keys:
+
+> [!NOTE]  
+> You may use any llm and embedding model of your choice...
+> 1. If using Azure OpenAI, no modification required.
+> 2. If using direct OpenAI, modify the llm and embedding model definitions in the 'config.py' and provide appropriate env variables.
+> 3. If using local models, appropriate code changes might be required throughout the codebase especially in 'agents'.
+
+> [!WARNING]  
+> If all necessary env variables are not provided, errors will be thrown in console.
+
+```bash
+# LLM Configuration (Azure Open AI - gpt-4o used in development)
+# If using any other LLM API key or local LLM, appropriate code modification is required
+deployment_name = 
+model_name = gpt-4o
+azure_endpoint = 
+openai_api_key = 
+openai_api_version = 
+
+# Embedding Model Configuration (Azure Open AI - text-embedding-ada-002 used in development)
+# If using any other embedding model, appropriate code modification is required
+embedding_deployment_name =
+embedding_model_name = text-embedding-ada-002
+embedding_azure_endpoint = 
+embedding_openai_api_key = 
+embedding_openai_api_version = 
+
+# Speech API Key (Free credits available with new Eleven Labs Account)
+ELEVEN_LABS_API_KEY = 
+
+# Web Search API Key (Free credits available with new Tavily Account)
+TAVILY_API_KEY = 
+
+# Hugging Face Token - using reranker model "ms-marco-TinyBERT-L-6"
+HUGGINGFACE_TOKEN = 
+
+# (OPTIONAL) If using Qdrant server version, local does not require API key
+QDRANT_URL = 
+QDRANT_API_KEY = 
+```
+
+### 3️⃣ Run with Docker Compose
+```bash
+docker-compose up -d
+```
+This will start two services:
+
+- fastapi-backend: Runs the FastAPI backend on port 8000
+- main-app: Runs the main application (app.py)
+
+### 4️⃣ Ingest data into the Vector DB
+```bash
+# To ingest a single file
+docker-compose run --rm fastapi-backend ingest --file ./data/raw/your_file.pdf
+
+# To ingest all files in a directory
+docker-compose run --rm fastapi-backend ingest --dir ./data/raw
+```
+
+### 5️⃣ Access the Application
+The application will be available at: `http://localhost:8000`
+
+### 6️⃣ Stopping the Application
+```bash
+docker-compose down
+```
+
+## 📌 Option 2: Manual Installation  <a name="manual-setup"></a>
+
 ### 1️⃣ Clone the Repository  
 ```bash  
 git clone https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant.git  
@@ -233,53 +314,13 @@ winget install ffmpeg
 ```bash
 pip install -r requirements.txt  
 ```
-- Might be required, might not be:
+- Might be required:
 ```bash
 pip install unstructured[pdf]
 ```
 
 ### 4️⃣ Set Up API Keys  
-- Create a `.env` file and add the following API keys:
-
-> [!NOTE]  
-> You may use any llm and embedding model of your choice...
-> 1. If using Azure OpenAI, no modification required.
-> 2. If using direct OpenAI, modify the llm and embedding model definitions in the 'config.py' and provide appropriate env variables.
-> 3. If using local models, appropriate code changes might be required throughout the codebase especially in 'agents'.
-
-> [!WARNING]  
-> If all necessary env variables are not provided, errors will be thrown in console.
-
-```bash
-# LLM Configuration (Azure Open AI - gpt-4o used in development)
-# If using any other LLM API key or local LLM, appropriate code modification is required
-deployment_name = 
-model_name = gpt-4o
-azure_endpoint = 
-openai_api_key = 
-openai_api_version = 
-
-# Embedding Model Configuration (Azure Open AI - text-embedding-ada-002 used in development)
-# If using any other embedding model, appropriate code modification is required
-embedding_deployment_name =
-embedding_model_name = text-embedding-ada-002
-embedding_azure_endpoint = 
-embedding_openai_api_key = 
-embedding_openai_api_version = 
-
-# Speech API Key (Free credits available with new Eleven Labs Account)
-ELEVEN_LABS_API_KEY = 
-
-# Web Search API Key (Free credits available with new Tavily Account)
-TAVILY_API_KEY = 
-
-# Hugging Face Token - using reranker model "ms-marco-TinyBERT-L-6"
-HUGGINGFACE_TOKEN = 
-
-# (OPTIONAL) If using Qdrant server version, local does not require API key
-QDRANT_URL = 
-QDRANT_API_KEY = 
-```
+- Create a `.env` file and add the required API keys as shown in `Option 1`.
 
 ### 5️⃣ Run the Application  
 - Run the following commands one after another in separate windows with same directorty and virtual environment. Keep both running simultanesouly.
@@ -299,6 +340,34 @@ python ingest_rag_data.py --file ./data/raw/brain_tumors_ucni.pdf
 
 ```bash
 python ingest_rag_data.py --dir ./data/raw
+```
+
+---
+
+## Docker Related Information:
+
+### Data Persistence
+
+The vector database data is stored in Docker volumes:
+
+- `vector-db-processed`: Contains data from the `data/processed` directory
+- `vector-db-qdrant`: Contains data from the `data/qdrantdb` directory
+- `upload-data`: Contains uploaded files in the `uploads` directory
+
+This ensures your data persists even if you remove the containers.
+
+### Troubleshooting Docker Setup
+
+- If the containers aren't starting properly, check logs:
+```bash
+docker-compose logs fastapi-backend
+docker-compose logs main-app
+```
+- Make sure all required environment variables are set in the `.env` file
+- To completely clean up and restart:
+```bash
+docker-compose down -v
+docker-compose up -d --build
 ```
 
 ---
