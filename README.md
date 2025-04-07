@@ -103,6 +103,11 @@ If you like what you see and would want to support the project's developer, you 
 
 ## ✨ Key Features  <a name="key-features"></a>
 
+> [!NOTE]  
+> Upcoming features:
+> 1. Brain Tumor Medical Computer Vision model integration.
+> 2. Streaming of LLM responses to UI.
+
 - 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
 - 🔍 **Advanced RAG Retrieval System** : 
@@ -116,7 +121,7 @@ If you like what you see and would want to support the project's developer, you 
   - Supported file types for RAG ingestion and retrieval: .txt, .csv, .json, .pdf.
 
 - 🏥 **Medical Imaging Analysis**  
-  - Brain Tumor Detection
+  - Brain Tumor Detection (TBD)
   - Chest X-ray Disease Classification
   - Skin Lesion Segmentation
 
