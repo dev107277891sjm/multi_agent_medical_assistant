@@ -67,7 +67,7 @@ For learners: Refer `agents/README.md` for detailed explanation of the agentic w
 ## 💫 Demo <a name="demo"></a>
 
 
-https://github.com/user-attachments/assets/addd61f7-905e-43ba-b5da-c6deedf0fbb9
+https://github.com/user-attachments/assets/e096013d-f736-41f7-ae7a-45daf67efd5d
 
 
 If you like what you see and would want to support the project's developer, you can <a href="https://www.buymeacoffee.com/souvikmajumder" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a> ! :)
@@ -181,8 +181,8 @@ source <environment-name>/bin/activate  # For Mac/Linux
 ### 3️⃣ Install Dependencies  
 
 > [!IMPORTANT]  
-> ffmpeg is required for speech service to work.
-> Poppler and Tesseract OCR are essential for table extraction from PDFs using Unstructured.IO.
+> 1. ffmpeg is required for speech service to work.
+> 2. Poppler and Tesseract OCR are essential for table extraction from PDFs using Unstructured.IO.
 
 - To install poppler and tesseract OCR for Ubuntu/Debian/macOS:
 ```bash
@@ -304,9 +304,9 @@ python ingest_rag_data.py --dir ./data/raw
 ## 🧠 Usage  <a name="usage"></a>
 
 > [!NOTE]
-> The first run can be jittery and may get errors - be patient and check the console for ongoing downloads and installations.
-> On the first run, many models will be downloaded - yolo for tesseract ocr, computer vision agent models, cross-encoder reranker model, etc.
-> Once they are completed, retry. Everything should work seamlessly since all of it is thoroughly tested.
+> 1. The first run can be jittery and may get errors - be patient and check the console for ongoing downloads and installations.
+> 2. On the first run, many models will be downloaded - yolo for tesseract ocr, computer vision agent models, cross-encoder reranker model, etc.
+> 3. Once they are completed, retry. Everything should work seamlessly since all of it is thoroughly tested.
 
 - Upload medical images for **AI-based diagnosis**. Task specific Computer Vision model powered agents - upload images from 'sample_images' folder to try out.
 - Ask medical queries to leverage **retrieval-augmented generation (RAG)** if information in memory or **web-search** to retrieve latest information.  
