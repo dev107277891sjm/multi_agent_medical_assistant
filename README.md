@@ -27,6 +27,8 @@
 - [Key Features](#key-features)
 - [Tech Stack](#technology-stack)
 - [Installation and Setup](#installation-setup)
+- - [Using Docker](#docker-setup)
+- - [Manual Installation](#manual-setup)
 - [Usage](#usage)
 - [Contributions](#contributions)
 - [License](#license)
@@ -161,7 +163,7 @@ If you like what you see and would want to support the project's developer, you 
 
 ## 🚀 Installation & Setup  <a name="installation-setup"></a>
 
-## Option 1: Using Docker
+## 📌 Option 1: Using Docker  <a name="docker-setup"></a>
 
 ### 1️⃣ Clone the Repository  
 ```bash  
@@ -238,7 +240,7 @@ The application will be available at: `http://localhost:8000`
 docker-compose down
 ```
 
-## Option 2: Manual Installation
+## 📌 Option 2: Manual Installation  <a name="manual-setup"></a>
 
 ### 1️⃣ Clone the Repository  
 ```bash  
@@ -340,13 +342,13 @@ python ingest_rag_data.py --file ./data/raw/brain_tumors_ucni.pdf
 python ingest_rag_data.py --dir ./data/raw
 ```
 
---
+---
 
 ## Docker Related Information:
 
 ### Data Persistence
 
-Your vector database data is stored in Docker volumes:
+The vector database data is stored in Docker volumes:
 
 - `vector-db-processed`: Contains data from the `data/processed` directory
 - `vector-db-qdrant`: Contains data from the `data/qdrantdb` directory
