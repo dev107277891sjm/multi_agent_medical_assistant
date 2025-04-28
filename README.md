@@ -23,7 +23,7 @@
 > [!IMPORTANT]  
 > 📋 Version Updates from v2.0 to v2.1 and further:
 > 1. **Document Processing Upgrade**: Unstructured.io has been replaced with Docling for document parsing and extraction of text, tables, and images to be embedded.
-> 2. **Enhanced RAG References**: In case of RAG agent, links to source documents and images in retrieved reference stored in local storage are added at the bottom of the responses.
+> 2. **Enhanced RAG References**: Links to source documents and reference images present in reranked retrieved chunks stored in local storage are added to the bottom of the RAG responses.
 > To use Unstructured.io based solution; refer v2.0 release.
  
 ## 📚 Table of Contents
