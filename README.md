@@ -345,12 +345,12 @@ python app.py
 The application will be available at: `http://localhost:8000`
 
 ### 6️⃣ Ingest additional data into the Vector DB
-- Run any one of the following commands as required.
-  - To ingest one document at a time:
+Run any one of the following commands as required.
+- To ingest one document at a time:
 ```bash
 python ingest_rag_data.py --file ./data/raw/brain_tumors_ucni.pdf
 ```
-  - To ingest multiple documents from a directory:
+- To ingest multiple documents from a directory:
 ```bash
 python ingest_rag_data.py --dir ./data/raw
 ```
