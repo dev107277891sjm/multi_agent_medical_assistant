@@ -15,7 +15,7 @@ from docling_core.types.doc import PictureItem, TableItem
 
 class MedicalDocParser:
     """
-    Handles parsing of medical research documents.
+    Handles parsing of medical research documents using docling.
     """
     def __init__(self):
         self.logger = logging.getLogger(__name__)
