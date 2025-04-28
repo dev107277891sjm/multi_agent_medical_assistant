@@ -19,6 +19,12 @@
 </div>
 
 ----
+
+> [!IMPORTANT]  
+> 📋 Version Updates from v2.0 to v2.1 and further:
+> 1. **Document Processing Upgrade**: Unstructured.io has been replaced with Docling for document parsing and extraction of text, tables, and images to be embedded.
+> 2. **Enhanced RAG References**: In case of RAG agent, links to source documents and images in retrieved reference stored in local storage are added at the bottom of the responses.
+> To use Unstructured.io based solution; refer v2.0 release.
  
 ## 📚 Table of Contents
 - [Overview](#overview)
@@ -109,15 +115,15 @@ If you like what you see and would want to support the project's developer, you 
 
 - 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
-- 🔍 **Advanced RAG Retrieval System** : 
-  - Unstructured.io parsing to extract and embed text along with tables from PDFs.
-  - Semantic chunking with structural boundary awareness.
+- 🔍 **Advanced RAG Retrieval System** :
+
+  - Docling based parsing to extract text, tables, and images from PDFs.
+  - Embedding markdown formatted text, tables and LLM based image summaries.
+  - LLM based semantic chunking with structural boundary awareness.
+  - LLM based query expansion with related medical domain terms.
   - Qdrant hybrid search combining BM25 sparse keyword search along with dense embedding vector search.
-  - Query expansion with related terms to enhance search results.
-  - Metadata enrichment to add context and improve seach accuracy.
   - Input-output guardrails to ensure safe and relevant responses.
   - Confidence-based agent-to-agent handoff between RAG and Web Search to prevent hallucinations.
-  - Supported file types for RAG ingestion and retrieval: .txt, .csv, .json, .pdf.
 
 - 🏥 **Medical Imaging Analysis**  
   - Brain Tumor Detection (TBD)
@@ -165,14 +171,19 @@ If you like what you see and would want to support the project's developer, you 
 
 ## 📌 Option 1: Using Docker  <a name="docker-setup"></a>
 
-### 1️⃣ Clone the Repository  
-```bash  
-git clone https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant.git  
-cd Multi-Agent-Medical-Assistant  
+### Prerequisites:
+
+- [Docker](https://docs.docker.com/get-docker/) installed on your system
+- API keys for the required services
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant.git
+cd Multi-Agent-Medical-Assistant
 ```
 
-### 2️⃣ Set Up API Keys  
-- Create a `.env` file and add the following API keys:
+### 2️⃣ Create Environment File
+- Create a `.env` file in the root directory and add the following API keys:
 
 > [!NOTE]  
 > You may use any llm and embedding model of your choice...
@@ -181,7 +192,7 @@ cd Multi-Agent-Medical-Assistant
 > 3. If using local models, appropriate code changes might be required throughout the codebase especially in 'agents'.
 
 > [!WARNING]  
-> If all necessary env variables are not provided, errors will be thrown in console.
+> Ensure the API keys in the `.env` file are correct and have the necessary permissions.
 
 ```bash
 # LLM Configuration (Azure Open AI - gpt-4o used in development)
@@ -214,31 +225,71 @@ QDRANT_URL =
 QDRANT_API_KEY = 
 ```
 
-### 3️⃣ Run with Docker Compose
+### 3️⃣ Build the Docker Image
 ```bash
-docker-compose up -d
-```
-This will start two services:
-
-- fastapi-backend: Runs the FastAPI backend on port 8000
-- main-app: Runs the main application (app.py)
-
-### 4️⃣ Ingest data into the Vector DB
-```bash
-# To ingest a single file
-docker-compose run --rm fastapi-backend ingest --file ./data/raw/your_file.pdf
-
-# To ingest all files in a directory
-docker-compose run --rm fastapi-backend ingest --dir ./data/raw
+docker build -t medical-assistant .
 ```
 
-### 5️⃣ Access the Application
+### 4️⃣ Run the Docker Container
+```bash
+docker run -d \
+  --name medical-assistant-app \
+  -p 8000:8000 \
+  --env-file .env \
+  -v $(pwd)/data:/app/data \
+  -v $(pwd)/uploads:/app/uploads \
+  medical-assistant
+```
 The application will be available at: `http://localhost:8000`
 
-### 6️⃣ Stopping the Application
+### 5️⃣ Ingest Data into Vector DB from Docker Container
+
+- To ingest a single document:
 ```bash
-docker-compose down
+docker exec medical-assistant-app python ingest_rag_data.py --file ./data/raw/brain_tumors_ucni.pdf
 ```
+
+- To ingest multiple documents from a directory:
+```bash
+docker exec medical-assistant-app python ingest_rag_data.py --dir ./data/raw
+```
+
+### Managing the Container:
+
+#### Stop the Container
+```bash
+docker stop medical-assistant-app
+```
+
+#### Start the Container
+```bash
+docker start medical-assistant-app
+```
+
+#### View Logs
+```bash
+docker logs medical-assistant-app
+```
+
+#### Remove the Container
+```bash
+docker rm medical-assistant-app
+```
+
+### Troubleshooting:
+
+#### Container Health Check
+The container includes a health check that monitors the application status. You can check the health status with:
+```bash
+docker inspect --format='{{.State.Health.Status}}' medical-assistant-app
+```
+
+#### Container Not Starting
+If the container fails to start, check the logs for errors:
+```bash
+docker logs medical-assistant-app
+```
+
 
 ## 📌 Option 2: Manual Installation  <a name="manual-setup"></a>
 
@@ -264,41 +315,7 @@ source <environment-name>/bin/activate  # For Mac/Linux
 ### 3️⃣ Install Dependencies  
 
 > [!IMPORTANT]  
-> 1. ffmpeg is required for speech service to work.
-> 2. Poppler and Tesseract OCR are essential for table extraction from PDFs using Unstructured.IO.
-
-- To install poppler and tesseract OCR for Ubuntu/Debian/macOS:
-```bash
-# if on Ubuntu/Debian
-sudo apt-get update
-sudo apt-get install -y poppler-utils tesseract-ocr
-```
-```bash
-# if on macOS
-brew install poppler tesseract
-```
-
-- Install Poppler for Windows:
-```bash
-Download the latest poppler release for Windows from: https://github.com/oschwartz10612/poppler-windows/releases/
-Extract the ZIP file to a location on your computer (e.g., 'C:\Program Files\poppler')
-Add the bin directory to your PATH environment variable (e.g., 'C:\Program Files\poppler\bin')
-```
-
-- Install Tesseract OCR for Windows:
-```bash
-Download the Tesseract installer from: https://github.com/UB-Mannheim/tesseract/wiki
-Run the installer and complete the installation
-By default, it installs to 'C:\Program Files\Tesseract-OCR'
-Make sure to add it to your PATH during installation or add it manually afterward
-```
-
-- Verify your installation:
-```bash
-Open a new command prompt (to ensure it has the updated PATH)
-Run 'tesseract --version' to verify Tesseract is properly installed
-Run 'pdfinfo -h' or 'pdftoppm -h' to verify Poppler is properly installed
-```
+> ffmpeg is required for speech service to work.
 
 - If using conda:
 ```bash
@@ -314,60 +331,27 @@ winget install ffmpeg
 ```bash
 pip install -r requirements.txt  
 ```
-- Might be required:
-```bash
-pip install unstructured[pdf]
-```
 
 ### 4️⃣ Set Up API Keys  
 - Create a `.env` file and add the required API keys as shown in `Option 1`.
 
 ### 5️⃣ Run the Application  
-- Run the following commands one after another in separate windows with same directorty and virtual environment. Keep both running simultanesouly.
-```bash  
-uvicorn api.fastapi_backend:app --reload
-```
+- Run the following command in the activate environment.
 
 ```bash
 python app.py
 ```
+The application will be available at: `http://localhost:8000`
 
 ### 6️⃣ Ingest additional data into the Vector DB
-- Run any one of the following commands as required. First one to ingest one document at a time, second one to ingest multiple documents from a directory.
+- Run any one of the following commands as required.
+  - To ingest one document at a time:
 ```bash
 python ingest_rag_data.py --file ./data/raw/brain_tumors_ucni.pdf
 ```
-
+  - To ingest multiple documents from a directory:
 ```bash
 python ingest_rag_data.py --dir ./data/raw
-```
-
----
-
-## Docker Related Information:
-
-### Data Persistence
-
-The vector database data is stored in Docker volumes:
-
-- `vector-db-processed`: Contains data from the `data/processed` directory
-- `vector-db-qdrant`: Contains data from the `data/qdrantdb` directory
-- `upload-data`: Contains uploaded files in the `uploads` directory
-
-This ensures your data persists even if you remove the containers.
-
-### Troubleshooting Docker Setup
-
-- If the containers aren't starting properly, check logs:
-```bash
-docker-compose logs fastapi-backend
-docker-compose logs main-app
-```
-- Make sure all required environment variables are set in the `.env` file
-- To completely clean up and restart:
-```bash
-docker-compose down -v
-docker-compose up -d --build
 ```
 
 ---
