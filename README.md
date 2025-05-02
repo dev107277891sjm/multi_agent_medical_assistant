@@ -25,7 +25,7 @@
 > 1. **Document Processing Upgrade**: Unstructured.io has been replaced with Docling for document parsing and extraction of text, tables, and images to be embedded.
 > 2. **Enhanced RAG References**: Links to source documents and reference images present in reranked retrieved chunks stored in local storage are added to the bottom of the RAG responses.
 >
-> To use Unstructured.io based solution, refer release - v2.0.
+> To use Unstructured.io based solution, refer release - [v2.0](https://github.com/souvikmajumder26/Multi-Agent-Medical-Assistant/tree/v2.0).
  
 ## 📚 Table of Contents
 - [Overview](#overview)
@@ -116,14 +116,16 @@ If you like what you see and would want to support the project's developer, you 
 
 - 🤖 **Multi-Agent Architecture** : Specialized agents working in harmony to handle diagnosis, information retrieval, reasoning, and more
 
-- 🔍 **Advanced RAG Retrieval System** :
+- 🔍 **Advanced Agentic RAG Retrieval System** :
 
   - Docling based parsing to extract text, tables, and images from PDFs.
   - Embedding markdown formatted text, tables and LLM based image summaries.
   - LLM based semantic chunking with structural boundary awareness.
   - LLM based query expansion with related medical domain terms.
   - Qdrant hybrid search combining BM25 sparse keyword search along with dense embedding vector search.
+  - HuggingFace Cross-Encoder based reranking of retrieved document chunks for accurate LLM reponses.
   - Input-output guardrails to ensure safe and relevant responses.
+  - Links to source documents and images present in reference document chunks provided with reponse.
   - Confidence-based agent-to-agent handoff between RAG and Web Search to prevent hallucinations.
 
 - 🏥 **Medical Imaging Analysis**  
@@ -242,7 +244,7 @@ docker run -d \
   -v $(pwd)/uploads:/app/uploads \
   medical-assistant
 ```
-The application will be available at: `http://localhost:8000`
+The application will be available at: [http://localhost:8000](http://localhost:8000)
 
 ### 5️⃣ Ingest Data into Vector DB from Docker Container
 
@@ -343,7 +345,7 @@ pip install -r requirements.txt
 ```bash
 python app.py
 ```
-The application will be available at: `http://localhost:8000`
+The application will be available at: [http://localhost:8000](http://localhost:8000)
 
 ### 6️⃣ Ingest additional data into the Vector DB
 Run any one of the following commands as required.
