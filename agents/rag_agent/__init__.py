@@ -210,7 +210,8 @@ class MedicalRAG:
             response = self.response_generator.generate_response(
                 query=query,
                 retrieved_docs=reranked_documents,
-                picture_paths=reranked_top_k_picture_paths
+                picture_paths=reranked_top_k_picture_paths,
+                chat_history=chat_history
                 )
             
             # Add timing information
