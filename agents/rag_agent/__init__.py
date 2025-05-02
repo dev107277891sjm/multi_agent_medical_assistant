@@ -52,7 +52,7 @@ class MedicalRAG:
                 raise ValueError(f"Directory not found: {directory_path}")
             
             # Get all files in the directory
-            files = [os.path.join(directory_path, f) for f in os.listdir(directory_path) 
+            files = [os.path.join(directory_path + '/', f) for f in os.listdir(directory_path) 
                      if os.path.isfile(os.path.join(directory_path, f))]
             
             if not files:
