@@ -295,7 +295,7 @@ docker logs medical-assistant-app
 ```
 
 
-## 📌 Option 2: Manual Installation  <a name="manual-setup"></a>
+## 📌 Option 2: Without Using Docker  <a name="manual-setup"></a>
 
 ### 1️⃣ Clone the Repository  
 ```bash  
