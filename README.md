@@ -197,36 +197,37 @@ cd Multi-Agent-Medical-Assistant
 
 > [!WARNING]  
 > Ensure the API keys in the `.env` file are correct and have the necessary permissions.
+> No trailing whitespaces after variable names.
 
 ```bash
 # LLM Configuration (Azure Open AI - gpt-4o used in development)
 # If using any other LLM API key or local LLM, appropriate code modification is required
-deployment_name = 
-model_name = gpt-4o
-azure_endpoint = 
-openai_api_key = 
-openai_api_version = 
+deployment_name= 
+model_name=gpt-4o
+azure_endpoint=
+openai_api_key=
+openai_api_version=
 
 # Embedding Model Configuration (Azure Open AI - text-embedding-ada-002 used in development)
 # If using any other embedding model, appropriate code modification is required
-embedding_deployment_name =
-embedding_model_name = text-embedding-ada-002
-embedding_azure_endpoint = 
-embedding_openai_api_key = 
-embedding_openai_api_version = 
+embedding_deployment_name=
+embedding_model_name=text-embedding-ada-002
+embedding_azure_endpoint=
+embedding_openai_api_key=
+embedding_openai_api_version=
 
 # Speech API Key (Free credits available with new Eleven Labs Account)
-ELEVEN_LABS_API_KEY = 
+ELEVEN_LABS_API_KEY=
 
 # Web Search API Key (Free credits available with new Tavily Account)
-TAVILY_API_KEY = 
+TAVILY_API_KEY=
 
 # Hugging Face Token - using reranker model "ms-marco-TinyBERT-L-6"
-HUGGINGFACE_TOKEN = 
+HUGGINGFACE_TOKEN=
 
 # (OPTIONAL) If using Qdrant server version, local does not require API key
-QDRANT_URL = 
-QDRANT_API_KEY = 
+QDRANT_URL=
+QDRANT_API_KEY=
 ```
 
 ### 3️⃣ Build the Docker Image
@@ -236,13 +237,7 @@ docker build -t medical-assistant .
 
 ### 4️⃣ Run the Docker Container
 ```bash
-docker run -d \
-  --name medical-assistant-app \
-  -p 8000:8000 \
-  --env-file .env \
-  -v $(pwd)/data:/app/data \
-  -v $(pwd)/uploads:/app/uploads \
-  medical-assistant
+docker run -d --name medical-assistant-app -p 8000:8000 --env-file .env medical-assistant
 ```
 The application will be available at: [http://localhost:8000](http://localhost:8000)
 
