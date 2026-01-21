@@ -394,11 +394,9 @@ This project is licensed under the **Apache-2.0 License**. See the [LICENSE](LIC
 ---
 
 ## 📬 Contact  <a name="contact"></a>
-For any questions or collaboration inquiries, reach out to **Souvik Majumder** on:  
+For any questions or collaboration inquiries, reach out to **dev107277891sjm** on:  
 
-🔗 **LinkedIn**: [https://www.linkedin.com/in/souvikmajumder26](https://www.linkedin.com/in/souvikmajumder26)
-
-🔗 **GitHub**: [https://github.com/souvikmajumder26](https://github.com/souvikmajumder26)
+🔗 **GitHub**: [https://github.com/dev107277891sjm](https://github.com/dev107277891sjm)
 
 <p align="right">
  <a href="#top"><b>🔝 Return </b></a>
